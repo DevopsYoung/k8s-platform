@@ -1,0 +1,18 @@
+1.14 -- 1.20 的k8s集群都可以用client-go v0.20.10的版本
+
+项目操作：
+    1、先进行go mod init k8s-platform
+    2、在terminal中 go get -u k8s.io/client-go@v0.20.10
+    3、go mod tidy
+    4、go get -u github.com/gin-gonic/gin
+
+目录说明：
+    1、config：定义全局配置，如监听地址，管理员账号
+    2、conroller：controller层，定义路由规则，及接口入参和响应
+    3、service：服务层，处理接口的业务逻辑
+    4、dao：数据库操作，包含数据库的增删改查
+    5、model：定义数据库表的字段
+    6、db：用于初始化数据库连接
+    7、middle：中间件层，定义全局逻辑处理，如跨域、jwt验证等。
+    7、utils：工具目录，定义常用工具，如token解析，文件操作等
+
