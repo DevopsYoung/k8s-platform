@@ -15,15 +15,15 @@ import (
 func main() {
 	//初始化k8s client
 	service.K8s.Init()
-	if pods_list, err := service.K8s.ClientSet.CoreV1().Pods("kube-system").
-		List(context.TODO(), metav1.ListOptions{}); err != nil {
-		panic("faild to get pods list")
-	} else {
-		for _, pod := range pods_list.Items {
-			fmt.Println(pod.Name)
-		}
-
-	}
+	//if pods_list, err := service.K8s.ClientSet.CoreV1().Pods("kube-system").
+	//	List(context.TODO(), metav1.ListOptions{}); err != nil {
+	//	panic("faild to get pods list")
+	//} else {
+	//	for _, pod := range pods_list.Items {
+	//		fmt.Println(pod.Name)
+	//	}
+	//
+	//}
 	r := gin.Default()
 	controller.Router.InitApiRouter(r)
 	r.Run(config.ListenAddr)
